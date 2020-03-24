@@ -19,5 +19,10 @@ public class HamcrestMatchersTest {
         assertThat(numbers, hasSize(3));
         assertThat(numbers, hasItems(12, 13));
         assertThat(numbers, everyItem(greaterThan(10)));
+
+//        assertThat("", isEmptyString()); deprecated
+        assertThat("ABCDE", containsString("BCD"));
+        assertThat("ABCDE", startsWith("ABC"));
+        assertThat("ABCDE", endsWith("CDE"));
     }
 }
