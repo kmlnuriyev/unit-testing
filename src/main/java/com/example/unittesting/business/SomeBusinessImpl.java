@@ -2,12 +2,18 @@ package com.example.unittesting.business;
 
 import com.example.unittesting.data.SomeDataService;
 
+import java.util.Arrays;
+
 public class SomeBusinessImpl {
 
     SomeDataService someDataService;
 
     public void setSomeDataService(SomeDataService someDataService) {
         this.someDataService = someDataService;
+    }
+
+    public int calculateSumUsingStream(int[] data) {
+        return Arrays.stream(data).reduce(Integer::sum).orElse(0);
     }
 
     public int calculateSum(int[] data) {
